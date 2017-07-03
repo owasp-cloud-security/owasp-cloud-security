@@ -1,0 +1,54 @@
+graph LR
+  subgraph Networking
+    eip(Elastic IPs)
+    sg(Security Groups)
+    vpc(VPC)
+    eni(Network interface)
+    publicip(Public IPs)
+    privateip(Private IPs)
+    subnet(Subnets)
+    nacl(NACLs)
+    routing(Routing)
+  end
+
+  subgraph IAM
+    instanceprofile(Instance profile)
+  end
+
+  subgraph Storage
+    ebsvolume(EBS Volumes)
+    ebssnapshot(EBS Snapshots)
+  end
+
+  subgraph Management
+    metadata(Metadata service)
+    status(Instance status)
+    consolelog(Console log)
+    cloudwatch(CloudWatch)
+    cloudtrail(CloudTrail)
+    flowlog(Flowlog)
+    tag(Tags)
+  end
+
+  subgraph Physical
+    az(Availability Zones)
+    vmhost(VM Host)
+    tenancy(Tenancy)
+  end
+
+  subgraph EC2
+    instance(Instance)
+    ami(AMI)
+    market(Marketplace)
+    key(Key pair)
+  end
+
+
+  instance --- metadata
+  metadata --- az
+  az --- eip
+  eip --- ebsvolume
+  linkStyle 0 stroke:#fff,stroke-width:0px;
+  linkStyle 1 stroke:#fff,stroke-width:0px;
+  linkStyle 2 stroke:#fff,stroke-width:0px;
+  linkStyle 3 stroke:#fff,stroke-width:0px;

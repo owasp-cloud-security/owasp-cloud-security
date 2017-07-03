@@ -8,25 +8,7 @@
 
 ## Related components
 
-* Elastic IPs
-* Availability Zones
-* Security groups
-* Scheduled events
-* AMIs
-* IAM Role (Instance profile)
-* Key pair
-* VPC
-* Network interface
-* Public IPs
-* Private IPs
-* Elastic IPs
-* Subnets
-* EBS volumes
-* Tags
-* Tenancy
-* CloudWatch
-* CloudTrail
-* Flowlog
+![Components](components.mmd.png)
 
 ## References
 
