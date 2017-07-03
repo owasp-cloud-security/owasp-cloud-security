@@ -1,3 +1,8 @@
+%% Mermaid components diagram for AWS EC2
+%% For more information on mermaid, see https://knsv.github.io/mermaid/
+%% Note: linkStyles below set the links to 0px stroke to force subgraphs
+%%       into a particular arrangement
+
 graph LR
   subgraph Networking
     eip(Elastic IPs)
@@ -9,6 +14,7 @@ graph LR
     subnet(Subnets)
     nacl(NACLs)
     routing(Routing)
+    asg(Autoscaling Groups)
   end
 
   subgraph IAM
@@ -28,6 +34,8 @@ graph LR
     cloudtrail(CloudTrail)
     flowlog(Flowlog)
     tag(Tags)
+    cloudformation(Cloudformation)
+    userdata(Userdata)
   end
 
   subgraph Physical
