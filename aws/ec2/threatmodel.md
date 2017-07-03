@@ -1,4 +1,4 @@
-# Amazon Web Services - Elastic Compute Cloud - Threat Model
+# AWS EC2 Threat Model
 
 # Overview
 
