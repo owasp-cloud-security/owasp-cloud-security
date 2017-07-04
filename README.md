@@ -4,6 +4,8 @@
 
 This project contains a growing library of threat models for Cloud services as well as BDD stores for the mitigations and controls that result from the threat models.
 
+This project was borne out of the [OWASP Summit 2017](https://owaspsummit.org/).
+
 # Project structure
 
 The root of this repository contains Cloud providers (e.g. aws). Within each directory you will find provider-specific services (e.g. ec2 for aws).
