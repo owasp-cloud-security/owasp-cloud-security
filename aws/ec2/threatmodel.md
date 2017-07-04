@@ -10,11 +10,6 @@
 
 ![Components](components.mmd.png)
 
-## References
-
-* http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
-* http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html
-
 # Assumptions
 
 * A threat model exists for console and API access to service. This page does not include threat models of the TLS or authentication mechanism of the AWS API itself.
