@@ -27,6 +27,7 @@ Each service directory contains the following files and directories:
 * ~~Set up project repository and define repo structure~~
 * Engage and on-board contributors
 * Set up official OWASP project
+* Set up community support and communication channels (e.g. Wiki, mailing list, IRC channel)
 * Begin threat modelling major AWS services (EC2, S3, SQS, RDS)
 * Begin writing BDD stories for identified mitigations and controls
 
