@@ -4,7 +4,7 @@ Amazon Web Service's virtual computing service.
 
 # Threat model
 
-(threatmodel.md)[threatmodel.md]
+[threatmodel.md](threatmodel.md)
 
 # See also
 
