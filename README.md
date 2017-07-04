@@ -2,7 +2,7 @@
 
 **Threat models and BDD stories**
 
-This project contains a growing library of threat models for Cloud services as well as BDD stores for the mitigations and controls that result from the threat models.
+This project contains a growing library of threat models for Cloud services as well as BDD stories for the mitigations and controls that result from the threat models.
 
 This project was borne out of the [OWASP Summit 2017](https://owaspsummit.org/).
 
