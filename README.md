@@ -20,6 +20,26 @@ Each service directory contains the following files and directories:
 * components.mmd.png - Components diagram image file
 * features - Directory containing .feature BDD mitigation/control stories
 
+# Roadmap
+
+## Short term goals
+
+* ~~Set up project repository and define repo structure~~
+* Engage and on-board contributors
+* Set up official OWASP project
+* Begin threat modelling major AWS services (EC2, S3, SQS, RDS)
+* Begin writing BDD stories for identified mitigations and controls
+
+## Medium term goals
+
+* Threat model additional AWS services (e.g. Cloudfront, Lambda, Elasticache)
+* Write BDD stories for indentified mitigations and controls
+
+## Long term goals
+
+* Threat model and BDD additional cloud services (Azure, Google Compute Engine)
+* Write vendor agnostic BDD stories (e.g. IaaS compute)
+
 # See also
 
 * https://knsv.github.io/mermaid/
