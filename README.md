@@ -1,5 +1,6 @@
-# owasp-cloud-security
-OWASP Cloud Security - Threat models and BDD stories
+# OWASP Cloud Security
+
+**Threat models and BDD stories**
 
 This project contains a growing library of threat models for Cloud services as well as BDD stores for the mitigations and controls that result from the threat models.
 
