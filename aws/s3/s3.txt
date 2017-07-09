@@ -1,3 +1,5 @@
+https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html
+
 predictable s3 bucket names
 
 We recommend that all bucket names comply with DNS naming conventions. These conventions are enforced in all regions except for the US East (N. Virginia) region. If you use the AWS management console, bucket names must be DNS compliant in all regions.
