@@ -53,6 +53,7 @@ Target date: 2018 onwards
 
 * https://knsv.github.io/mermaid/
 * https://en.wikipedia.org/wiki/Behavior-driven_development
+* http://www.networkworld.com/article/3074508/cloud-computing/top-30-aws-cloud-services.html
 
 # Contributing
 
