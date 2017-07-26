@@ -1,0 +1,27 @@
+%% Mermaid AWS EC2 Data Flow Diagram
+%% For more information on mermaid, see https://knsv.github.io/mermaid/
+
+graph LR
+  subgraph AWS
+    bucket[S3 Bucket]
+    api[API]
+    console[Console]
+    cloudformation[CloudFormation]
+
+    api --> bucket
+    console --> bucket
+    cloudformation --> bucket
+    api --> cloudformation
+    console --> cloudformation
+  end
+  
+  subgraph External
+    user[User]
+    service[Service]
+  end
+
+  user --> api
+  user --> console
+  user -.-> bucket
+  service -.-> bucket
+
