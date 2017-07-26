@@ -1,0 +1,33 @@
+%% Mermaid components diagram for AWS S3
+%% For more information on mermaid, see https://knsv.github.io/mermaid/
+%% Note: linkStyles below set the links to 0px stroke to force subgraphs
+%%       into a particular arrangement
+
+graph LR
+  subgraph Buckets
+    bucket(Bucket)
+    bucketpolicy(Bucket Policy)
+    website(Website)
+    bucketacl(Bucket ACL)
+    cors(Cross-origin resource sharing)
+    location(Location)
+    logging(Logging)
+    notification(Notification)
+    buckettagging(Tagging)
+    bucketversioning(Versioning)
+    lifecycle(Bucket Lifecycle)
+    accel(Acceleration Configuration)
+    repl(Replication Configuration)
+  end
+
+  subgraph Objects
+    object(Object)
+    objectversioning(Versioning)
+    objectacl(Object ACL)
+    objecttagging(Tagging)
+    torrent(Torrent)
+    mpu(Multi-part uploads)
+  end
+
+  bucket --- object
+  linkStyle 0 stroke:#fff,stroke-width:0px;
