@@ -10,6 +10,22 @@ This threat model is scoped to the IAM service itself, including for example rol
 
 # Threats
 
+## Notes
+
+* No MFA?
+* Using AWS accounts as principals exposes it to all principals in the account
+* Policy VersionId defaults to 2008 - is that bad?
+* Non-unique PolicyId?
+* Deny overrides allow which overrides implicit deny
+* What happens when you use principal in policy attached to a user or group? - Docs state "Do not use the Principal element in policies that you attach to IAM users or groups"
+* Wildcard principal means everyone/anonymous. A poorly defined condition could expose the policy to any user/role in any account.
+* Root is entire account - nice idea for a tool perhaps to look for uses of :root arns
+* Principal for specific users and roles uses canonical ids to prevent removal + addition
+* Assume role session id?
+* "Warning - When you use NotPrincipal in the same policy statement as Effect Allow the permissions specified in the policy statement will be granted to all principals except the ones specified, including anonymous". For example, an administrative policy that includes NonPrincipal:NormalUsers, Effect:Allow, Actions:Dangerous stuff would actually expose those actions to anonymous users
+* Apparently NonPrincipal + Effect:Deny is order dependant
+* NotAction results in exposure to new actions
+
 ### Attacker can gain unauthorised access to resources using unprotected access keys
 
 #### Mitigations
