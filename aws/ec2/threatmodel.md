@@ -29,3 +29,5 @@
 * In a shared tenancy environment, attacker is able to read sensitive data through the VM host (e.g. CPU cache)
 * Flowlog data exposes potentially sensitive metadata about connections
 * Attacker is able to restore a snapshot, thereby recovering all the data that is in the snapshot
+* Where instances in an AutoScaling Group have been hot-fixed, an attacker is able to revert an instance to an insecure stay using a DoS attack that causes health checks to fail, resulting in the AutoScaling Group removing the current hot-patched instance and replacing it with new un-patched ones.
+* Where instances in an AutoScaling Group fail to log to a centralised service, an attacker is able to destroy the logs using a DoS attack that causes health checks to fail, resuling in the AutoScaling Group removing the current instance with all the logs, and replacing it with a new instance without logs.
