@@ -10,42 +10,42 @@ This threat model is scoped to the IAM service itself, including for example rol
 
 # Threats
 
-## Attacker can gain unauthorised access to resources using unprotected access keys
+### Attacker can gain unauthorised access to resources using unprotected access keys
 
-### Mitigations
+#### Mitigations
 
 * Access key rotation. Either fixed time or dynamic using SSO)
 * Detection and clean up of unused access keys and users
 
-## Attacker can gain unauthorised access to ALL resources using unprotected root access keys
+### Attacker can gain unauthorised access to ALL resources using unprotected root access keys
 
-### Mitigations
+#### Mitigations
 
 * Do not use root access keys, instead create administrator and other users
 
-## Attacker can gain elevated permissions through unexpected AWS ManagedPolicy updates
+### Attacker can gain elevated permissions through unexpected AWS ManagedPolicy updates
 
 If the organisation uses AWS provided ManagedPolicies, then they may not be aware of the updates made by AWS to those policies. If AWS introduces additional services or actions, then the organisation may have additional exposure that they're not aware of. An attacker that knows about the updates may be able to use this to their advantage.
 
-### Mitigations
+#### Mitigations
 
 * Use custom policies (implicit denies)
 
-## Attacker can guess a user's AWS console password through weak password policy
+### Attacker can guess a user's AWS console password through weak password policy
 
-### Mitigations
+#### Mitigations
 
 * Use a complex password policy
 
-## Attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account
+### Attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account
 
-### Mitigations
+#### Mitigations
 
 * Use the optional ExternalId in a condition as a pre-shared key
 
-## Where ExternalId is used, attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account because the ExternalId lacked complexity and was easy to guess
+### Where ExternalId is used, attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account because the ExternalId lacked complexity and was easy to guess
 
-### Mitigations
+#### Mitigations
 
 * Use a long, securely generated random value
 
