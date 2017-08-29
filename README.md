@@ -8,6 +8,8 @@ This project was borne out of the [OWASP Summit 2017](https://owaspsummit.org/).
 
 # Project structure
 
+## Directory structure
+
 The root of this repository contains Cloud providers (e.g. aws). Within each directory you will find provider-specific services (e.g. ec2 for aws).
 
 Each service directory contains the following files and directories:
@@ -19,7 +21,39 @@ Each service directory contains the following files and directories:
 * components.mmd.png - Components diagram image file
 * features - Directory containing .feature BDD mitigation/control stories
 
+## Threat model structure
+
 The threat model structures are loosely based off the advice in https://blogs.msdn.microsoft.com/adioltean/2005/01/17/ten-tips-how-to-write-a-well-structured-threat-model-document/
+
+## Id field
+
+For threats the Id field is structured as follows:
+
+    OCST-<platform_id>-<service_id>-<threat_id>
+
+So if for example the Id is
+
+    OCST-1.3.1
+
+then the first 1 refers to the AWS platform, the 3 refers to the IAM service, and the second 1 refers to the threat number. In this case it is the first AWS IAM threat.
+
+For mitigations the Id field is structured as follows:
+
+    OCSM-<platform_id>-<service_id>-<mitigation_id>
+
+If the Id is
+
+    OCSM-1.3.4
+
+then the first 1 and the 3 are as above, and the 4 shows that it is the fourth AWS IAM mitigation. Note that the mitigation Ids are not directly associated with threats because one mitigation might address multiple threats. In the event that a mitigation addresses threats in multiple services, this will be noted but the mitigation Id will reference the most appropriate service.
+
+## Status field
+
+The status field is used to indicate the state of the threat. Some threats are simply a what-if that may in fact not be possible, whereas others have public attack tools/exploits. The following field values are used:
+
+* Unconfirmed - The threat is a what-if and may not actually even be possible. Further research is required.
+* Confirmed - The threat has been confirmed either through research or using a proof-of-concept attack tool.
+* Exploited - A known attack tool or exploit exists for the threat.
 
 # Roadmap
 

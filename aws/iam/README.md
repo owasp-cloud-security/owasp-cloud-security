@@ -33,7 +33,7 @@ This threat model is scoped to the IAM service itself, including for example rol
 * Apparently NonPrincipal + Effect:Deny is order dependant
 * NotAction results in exposure to new actions
 
-## OCSTM-3.1
+## OCST-1.3.1
 
 ### Name
 
