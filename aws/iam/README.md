@@ -45,6 +45,10 @@ If an AWS user doesn't sufficiently protect their access keys, for example by le
 
 Because the use of the API access keys is global, the attacker doesn't need to be an account already if the keys are exposed outside of AWS. 
 
+### Service
+
+AWS IAM
+
 ### Status
 
 Confirmed
