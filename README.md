@@ -52,7 +52,7 @@ then the first 1 and the 3 are as above, and the 4 shows that it is the fourth A
 The status field is used to indicate the state of the threat. Some threats are simply a what-if that may in fact not be possible, whereas others have public attack tools/exploits. The following field values are used:
 
 * Unconfirmed - The threat is a what-if and may not actually even be possible. Further research is required.
-* Confirmed - The threat has been confirmed either through research or using a proof-of-concept attack tool.
+* Confirmed - The threat has been confirmed through research.
 * Exploited - A known attack tool or exploit exists for the threat.
 
 # Roadmap
