@@ -61,7 +61,7 @@ Confirmed
 
 ### Mitigations
 
-* Access key rotation. Either fixed time or dynamic using SSO)
+* Access key rotation. Either fixed time or dynamic using SSO
 * Detection and clean up of unused access keys and users
 * Assume roles where possible
 
