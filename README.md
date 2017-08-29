@@ -12,13 +12,14 @@ The root of this repository contains Cloud providers (e.g. aws). Within each dir
 
 Each service directory contains the following files and directories:
 
-* README.md - A very brief overview of the service with links to relevant documentation
-* threatmodel.md - The threat model for the service
+* README.md - Overview and threat model
 * dfd.mmd - mermaid data flow diagram source file
 * dfd.mmd.png - Data flow diagram image file
 * components.mmd - mermaid components diagram source file
 * components.mmd.png - Components diagram image file
 * features - Directory containing .feature BDD mitigation/control stories
+
+The threat model structures are loosely based off the advice in https://blogs.msdn.microsoft.com/adioltean/2005/01/17/ten-tips-how-to-write-a-well-structured-threat-model-document/
 
 # Roadmap
 

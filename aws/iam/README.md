@@ -37,26 +37,37 @@ This threat model is scoped to the IAM service itself, including for example rol
 
 ### Name
 
-Attacker can gain unauthorised access to resources using unprotected access keys
+Attacker can gain unauthorised access to resources using unprotected AWS access keys.
 
 ### Description
 
-aklkaalslkaslklkj
+If an AWS user doesn't sufficiently protect their access keys, for example by leaving them on a server, then an attacker could use those keys to gain access to any resources assigned to those keys.
+
+Because the use of the API access keys is global, the attacker doesn't need to be an account already if the keys are exposed outside of AWS. 
 
 ### Status
 
-To be confirmed
+Confirmed
 
 ### STRIDE Classification
 
-STRIDE
+* Information disclosure
+* Elevation of privilege
 
 ### Components
+
+* IAM User
+* Access Key
 
 ### Mitigations
 
 * Access key rotation. Either fixed time or dynamic using SSO)
 * Detection and clean up of unused access keys and users
+* Assume roles where possible
+
+### References
+
+* https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 
 # OLD
 
