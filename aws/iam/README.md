@@ -17,29 +17,15 @@ This threat model is scoped to the IAM service itself, including for example rol
 
 # Threats
 
-## Notes
-
-* No MFA?
-* Using AWS accounts as principals exposes it to all principals in the account
-* Policy VersionId defaults to 2008 - is that bad?
-* Non-unique PolicyId?
-* Deny overrides allow which overrides implicit deny
-* What happens when you use principal in policy attached to a user or group? - Docs state "Do not use the Principal element in policies that you attach to IAM users or groups"
-* Wildcard principal means everyone/anonymous. A poorly defined condition could expose the policy to any user/role in any account.
-* Root is entire account - nice idea for a tool perhaps to look for uses of :root arns
-* Principal for specific users and roles uses canonical ids to prevent removal + addition
-* Assume role session id?
-* "Warning - When you use NotPrincipal in the same policy statement as Effect Allow the permissions specified in the policy statement will be granted to all principals except the ones specified, including anonymous". For example, an administrative policy that includes NonPrincipal:NormalUsers, Effect:Allow, Actions:Dangerous stuff would actually expose those actions to anonymous users
-* Apparently NonPrincipal + Effect:Deny is order dependant
-* NotAction results in exposure to new actions
-
 ## OCST-1.3.1
 
 ### Name
 
-Attacker can gain unauthorised access to resources using unprotected AWS access keys.
+Unprotected access keys.
 
 ### Description
+
+Attacker can gain unauthorised access to resources using unprotected AWS access keys.
 
 If an AWS user doesn't sufficiently protect their access keys, for example by leaving them on a server, then an attacker could use those keys to gain access to any resources assigned to those keys.
 
@@ -72,14 +58,50 @@ Confirmed
 ### References
 
 * https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
+
+## OCST-1.3.2
+
+### Name
+
+Unprotected root access keys
+
+### Description
+
+Attacker can gain unauthorised access to ALL resources using unprotected root access keys.
+
+The account root user has full access to all resources, including billing, and cannot be restricted.
+
+### Service
+
+AWS IAM
+
+### Status
+
+Confirmed
+
+### STRIDE Classification
+
+* Information disclosure
+* Elevation of privilege
+
+### Components
+
+* IAM User
+* Access Key
+* AWS Account (root user)
+
+### Mitigations
+
+* Do not use root access keys. Instead create separate administrative users or ideally users with the least privilege required for the use case.
+
+### References
+
+* https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
+
 
 # OLD
-
-### Attacker can gain unauthorised access to ALL resources using unprotected root access keys
-
-#### Mitigations
-
-* Do not use root access keys, instead create administrator and other users
 
 ### Attacker can gain elevated permissions through unexpected AWS ManagedPolicy updates
 
@@ -107,3 +129,18 @@ If the organisation uses AWS provided ManagedPolicies, then they may not be awar
 
 * Use a long, securely generated random value
 
+# Notes
+
+* No MFA?
+* Using AWS accounts as principals exposes it to all principals in the account
+* Policy VersionId defaults to 2008 - is that bad?
+* Non-unique PolicyId?
+* Deny overrides allow which overrides implicit deny
+* What happens when you use principal in policy attached to a user or group? - Docs state "Do not use the Principal element in policies that you attach to IAM users or groups"
+* Wildcard principal means everyone/anonymous. A poorly defined condition could expose the policy to any user/role in any account.
+* Root is entire account - nice idea for a tool perhaps to look for uses of :root arns
+* Principal for specific users and roles uses canonical ids to prevent removal + addition
+* Assume role session id?
+* "Warning - When you use NotPrincipal in the same policy statement as Effect Allow the permissions specified in the policy statement will be granted to all principals except the ones specified, including anonymous". For example, an administrative policy that includes NonPrincipal:NormalUsers, Effect:Allow, Actions:Dangerous stuff would actually expose those actions to anonymous users
+* Apparently NonPrincipal + Effect:Deny is order dependant
+* NotAction results in exposure to new actions
