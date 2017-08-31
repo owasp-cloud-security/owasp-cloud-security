@@ -1,11 +1,8 @@
-# AWS Identity and Access Management (IAM)
+# AWS Identity and Access Management (IAM) Threat Model
 
-Controlling access to AWS resources
-
-# See also
+## See also
 
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html
-# AWS IAM Threat Model
 
 # Assumptions
 
