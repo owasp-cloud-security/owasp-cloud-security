@@ -21,7 +21,7 @@ This threat model is scoped to the IAM service itself, including for example rol
 
 ### Name
 
-Unprotected access keys.
+Unprotected access keys
 
 ### Description
 
@@ -100,34 +100,150 @@ Confirmed
 * https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
 
+## OCST-1.3.3
 
-# OLD
+### Name
 
-### Attacker can gain elevated permissions through unexpected AWS ManagedPolicy updates
+Unexpected AWS ManagedPolicy updates
+
+### Description
+
+An attacker can gain elevated permissions through unexpected AWS ManagedPolicy updates.
 
 If the organisation uses AWS provided ManagedPolicies, then they may not be aware of the updates made by AWS to those policies. If AWS introduces additional services or actions, then the organisation may have additional exposure that they're not aware of. An attacker that knows about the updates may be able to use this to their advantage.
 
-#### Mitigations
+### Service
 
-* Use custom policies (implicit denies)
+AWS IAM
 
-### Attacker can guess a user's AWS console password through weak password policy
+### Status
 
-#### Mitigations
+Confirmed
 
-* Use a complex password policy
+### STRIDE Classification
 
-### Attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account
+* Elevation of privilege
 
-#### Mitigations
+### Components
+
+* IAM ManagedPolicy
+
+### Mitigations
+
+* Use customer managed policies with non-wildcard actions.
+
+### References
+
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html
+
+## OCST-1.3.4
+
+### Name
+
+Weak password policy
+
+### Description
+
+An attacker can guess a user's AWS console password through weak password policy.
+
+If an account password policy is not used, or is configured to be weak, then an attacker might be able to guess a user's password.
+
+### Service
+
+AWS IAM
+
+### Status
+
+Confirmed
+
+### STRIDE Classification
+
+* Elevation of privilege
+
+### Components
+
+* IAM User
+* Account Password Policy
+
+### Mitigations
+
+* Use a complex password policy such as having a minimum length and/or requiring specific character types.
+* Use federation (SSO)
+
+### References
+
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html
+
+## OCST-1.3.5
+
+### Name
+
+Confused deputy
+
+### Description
+
+An attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account.
+
+### Service
+
+AWS IAM
+
+### Status
+
+Confirmed
+
+### STRIDE Classification
+
+* Elevation of privilege
+
+### Components
+
+* IAM AssumeRole
+
+### Mitigations
 
 * Use the optional ExternalId in a condition as a pre-shared key
 
-### Where ExternalId is used, attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account because the ExternalId lacked complexity and was easy to guess
+### References
 
-#### Mitigations
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
+* https://aws.amazon.com/blogs/security/tag/confused-deputy/
 
-* Use a long, securely generated random value
+## OCST-1.3.6
+
+### Name
+
+Weak ExternalId
+
+### Description
+
+Where ExternalId is used, attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account because the ExternalId lacked complexity and was easy to guess
+
+### Service
+
+AWS IAM
+
+### Status
+
+Confirmed
+
+### STRIDE Classification
+
+* Elevation of privilege
+
+### Components
+
+* IAM AssumeRole
+* ExternalId
+
+### Mitigations
+
+* Use a long, securely generated random ExternalId
+
+### References
+
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
+* https://aws.amazon.com/blogs/security/tag/confused-deputy/
 
 # Notes
 
