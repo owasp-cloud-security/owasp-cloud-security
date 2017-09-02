@@ -125,6 +125,8 @@ threats:
       - Elevation of privilege
     components:
       - IAM AssumeRole
+      - Principals
+      - AWS Accounts
     mitigations:
       - Use specific users or roles as principals
     references:

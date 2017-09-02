@@ -174,6 +174,8 @@ Confirmed
 * Elevation of privilege
 ### Components
 * IAM AssumeRole
+* Principals
+* AWS Accounts
 ### Mitigations
 * Use specific users or roles as principals
 ### References
