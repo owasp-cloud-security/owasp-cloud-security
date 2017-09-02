@@ -15,7 +15,6 @@ This threat model is scoped to the IAM service itself, including for example rol
 # Notes
 
 * No MFA?
-* Using AWS accounts as principals exposes it to all principals in the account
 * Policy VersionId defaults to 2008 - is that bad?
 * Non-unique PolicyId?
 * Deny overrides allow which overrides implicit deny
@@ -161,3 +160,21 @@ Confirmed
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
 * https://aws.amazon.com/blogs/security/tag/confused-deputy/
+## OCST-1.3.7
+### Name
+Accounts used as principals
+### Description
+An attacker with an unprivileged user or role in a trusted (source) account may be able to gain elevated privileges in a trusting (destination) account by assuming a role in the trusting account that uses the trusted account (:root user) as a principal rather than using a specific role or user. This is because using an account as a principal exposes it to all principals in the trusted account.
+
+### Service
+AWS IAM
+### Status
+Confirmed
+### Stride
+* Elevation of privilege
+### Components
+* IAM AssumeRole
+### Mitigations
+* Use specific users or roles as principals
+### References
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Principal

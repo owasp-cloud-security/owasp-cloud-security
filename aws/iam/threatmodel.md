@@ -15,7 +15,6 @@ This threat model is scoped to the IAM service itself, including for example rol
 # Notes
 
 * No MFA?
-* Using AWS accounts as principals exposes it to all principals in the account
 * Policy VersionId defaults to 2008 - is that bad?
 * Non-unique PolicyId?
 * Deny overrides allow which overrides implicit deny
