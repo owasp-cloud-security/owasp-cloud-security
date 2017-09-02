@@ -257,3 +257,28 @@ Confirmed
 * "Warning - When you use NotPrincipal in the same policy statement as Effect Allow the permissions specified in the policy statement will be granted to all principals except the ones specified, including anonymous". For example, an administrative policy that includes NonPrincipal:NormalUsers, Effect:Allow, Actions:Dangerous stuff would actually expose those actions to anonymous users
 * Apparently NonPrincipal + Effect:Deny is order dependant
 * NotAction results in exposure to new actions
+# Threats
+## OCST-1.3.1
+### Name
+Unprotected access keys
+### Description
+Attacker can gain unauthorised access to resources using unprotected AWS access keys.
+
+If an AWS user doesn't sufficiently protect their access keys, for example by leaving them on a server, then an attacker could use those keys to gain access to any resources assigned to those keys.
+
+Because the use of the API access keys is global, the attacker doesn't need to be an account already if the keys are exposed outside of AWS.  
+
+### Service
+AWS IAM
+### Status
+Confirmed
+### Stride
+* Information Disclosure
+* Elevation of Privilege
+### Components
+* IAM user
+* Access Key
+### Mitigations
+* Access key rotation. Either fixed time or dynamic using SSO
+* Detection and clean up of unused access keys and users
+* Assume roles where possible
