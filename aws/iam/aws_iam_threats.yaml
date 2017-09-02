@@ -115,3 +115,17 @@ threats:
       - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
       - https://aws.amazon.com/blogs/security/tag/confused-deputy/
 
+  - id: OCST-1.3.7
+    name: Accounts used as principals
+    description: |
+An attacker with an unprivileged user or role in a trusted (source) account may be able to gain elevated privileges in a trusting (destination) account by assuming a role in the trusting account that uses the trusted account (:root user) as a principal rather than using a specific role or user. This is because using an account as a principal exposes it to all principals in the trusted account.
+    service: AWS IAM
+    status: Confirmed
+    stride:
+      - Elevation of privilege
+    components:
+      - IAM AssumeRole
+    mitigations:
+      - Use specific users or roles as principals
+    references:
+      - https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Principal
