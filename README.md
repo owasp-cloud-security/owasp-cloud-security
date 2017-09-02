@@ -21,11 +21,40 @@ Each service directory contains the following files and directories:
 * components.mmd.png - Components diagram image file
 * features - Directory containing .feature BDD mitigation/control stories
 
-## Threat model structure
+## Threat model yaml files
 
 The threat model structures are loosely based off the advice in https://blogs.msdn.microsoft.com/adioltean/2005/01/17/ten-tips-how-to-write-a-well-structured-threat-model-document/
 
-## Id field
+Threats are stored in YAML files:
+
+    threats:
+      - id: <OCST id>
+        name: <short name>
+        description: |
+          <long description>
+        service: <platform and service name>
+        status: <status name>
+        stride: <one or more of>
+          - Spoofing
+          - Tampering
+          - Repudiation
+          - Information disclosure
+          - Denial of service
+          - Elevation of privilege
+        components:
+          - <related platform/service components>
+        mitigations:
+          - <mitigation descriptions or references>
+        references:
+          - <relevant documentation>
+
+The service threat model README.md files can be generated using the following command in each service directory:
+
+    $ (cat threatmodel.md; ocst2md.py platform_service_threats.yaml) > README.md
+
+### Fields
+
+#### id
 
 For threats the Id field is structured as follows:
 
@@ -47,7 +76,7 @@ If the Id is
 
 then the first 1 and the 3 are as above, and the 4 shows that it is the fourth AWS IAM mitigation. Note that the mitigation Ids are not directly associated with threats because one mitigation might address multiple threats. In the event that a mitigation addresses threats in multiple services, this will be noted but the mitigation Id will reference the most appropriate service.
 
-## Status field
+#### status
 
 The status field is used to indicate the state of the threat. Some threats are simply a what-if that may in fact not be possible, whereas others have public attack tools/exploits. The following field values are used:
 
