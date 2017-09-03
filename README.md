@@ -90,14 +90,14 @@ The status field is used to indicate the state of the threat. Some threats are s
 
 ## Short term goals
 
-Target date: 1st September 2017
+Target date: 15th October 2017
 
 * ~~Set up project repository and define repo structure~~
 * Engage and on-board contributors
 * Set up official OWASP project
 * Set up community support and communication channels (e.g. Wiki, mailing list, IRC channel)
-* A basic collection of threat models for 10 most popular AWS services (EC2, S3, SQS, RDS etc.)
-* A basic collection of BDD stories for identified mitigations and controls of 10 most popular AWS services
+* A basic collection of threat models for 5 most popular AWS services (EC2, S3, IAM, SQS, RDS)
+* A basic collection of BDD stories for identified mitigations and controls of 5 most popular AWS services
 
 ## Medium term goals
 
