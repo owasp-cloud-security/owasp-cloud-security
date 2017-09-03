@@ -6,7 +6,7 @@ with open(sys.argv[1]) as fh:
   data = yaml.load(fh)
 
 key_order = ["name", "description", "service", "status", "stride", "components", "mitigations", "references"]
-print("# Threats")
+print("# Threats\n")
 for threat in data["threats"]:
   print("## %s" % threat["id"])
 
@@ -18,3 +18,4 @@ for threat in data["threats"]:
       elif isinstance(threat[key], list):
         for elem in threat[key]:
           print("* %s" % elem)
+  print

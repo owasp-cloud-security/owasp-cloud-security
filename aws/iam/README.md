@@ -28,6 +28,7 @@ This threat model is scoped to the IAM service itself, including for example rol
 * NotAction results in exposure to new actions
 
 # Threats
+
 ## OCST-1.3.1
 ### Name
 Unprotected access keys
@@ -55,6 +56,7 @@ Confirmed
 ### References
 * https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
+
 ## OCST-1.3.2
 ### Name
 Unprotected root access keys
@@ -79,6 +81,7 @@ Confirmed
 ### References
 * https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
+
 ## OCST-1.3.3
 ### Name
 Unexpected AWS ManagedPolicy updates
@@ -99,6 +102,7 @@ Confirmed
 * Use customer managed policies with non-wildcard actions.
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html
+
 ## OCST-1.3.4
 ### Name
 Weak password policy
@@ -121,6 +125,7 @@ Confirmed
 * Use federation (SSO)
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html
+
 ## OCST-1.3.5
 ### Name
 Confused deputy
@@ -140,6 +145,7 @@ Confirmed
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
 * https://aws.amazon.com/blogs/security/tag/confused-deputy/
+
 ## OCST-1.3.6
 ### Name
 Weak ExternalId
@@ -160,6 +166,7 @@ Confirmed
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
 * https://aws.amazon.com/blogs/security/tag/confused-deputy/
+
 ## OCST-1.3.7
 ### Name
 Accounts used as principals
@@ -180,3 +187,4 @@ Confirmed
 * Use specific users or roles as principals
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Principal
+
