@@ -14,14 +14,17 @@ for threat in data["threats"]:
   for key in key_order:
     if key in threat:
       print("### %s" % key.capitalize())
-      if isinstance(threat[key], str):
-        elems = [threat[key]]
-      elif isinstance(threat[key], list):
-        elems = threat[key]
 
-      for elem in elems:
+      if isinstance(threat[key], str):
+        elem = threat[key]
         if key == "mitigations":
-          print("* [%s](%s%s)" % (elem, base_path, elem))
+          print("[%s](%s%s)" % (elem, base_path, elem))
         else:
-          print("* %s" % elem)
+          print(elem)
+      elif isinstance(threat[key], list):
+        for elem in threat[key]:
+          if key == "mitigations":
+            print("* [%s](%s%s)" % (elem, base_path, elem))
+          else:
+            print("* %s" % elem)
   print

@@ -38,14 +38,14 @@ Amazon Web Service's virtual computing service.
 
 ## OCST-1.1.1
 ### Name
-* User Data contains sensitive data
+User Data contains sensitive data
 ### Description
-* An attacker may be able to gain access to sensitive information if it is stored in User Data, especially if they have read access to CloudFormation. Secret data such as passwords, API or pre-shared keys should not be placed directly in UserData.
+An attacker may be able to gain access to sensitive information if it is stored in User Data, especially if they have read access to CloudFormation. Secret data such as passwords, API or pre-shared keys should not be placed directly in UserData.
 
 ### Service
-* AWS EC2
+AWS EC2
 ### Status
-* Confirmed
+Confirmed
 ### Stride
 * Information Disclosure
 ### Components
@@ -57,11 +57,11 @@ Amazon Web Service's virtual computing service.
 
 ## OCST-1.1.2
 ### Name
-* Tampering of User Data
+Tampering of User Data
 ### Service
-* AWS EC2
+AWS EC2
 ### Status
-* Confirmed
+Confirmed
 ### Stride
 * Tampering
 ### Components
@@ -73,14 +73,14 @@ Amazon Web Service's virtual computing service.
 
 ## OCST-1.1.3
 ### Name
-* Metadata Server Side Request Forgery
+Metadata Server Side Request Forgery
 ### Description
-* TODO
+TODO
 
 ### Service
-* AWS EC2
+AWS EC2
 ### Status
-* Confirmed
+Confirmed
 ### Stride
 * Information Disclosure
 ### Components
@@ -93,16 +93,16 @@ Amazon Web Service's virtual computing service.
 
 ## OCST-1.1.4
 ### Name
-* Replacing User Data artifacts
+Replacing User Data artifacts
 ### Description
-* An attacker is able to overwrite build artifacts used during instance creation resulting in arbitrary code execution due to weak protection of the artifacts.
+An attacker is able to overwrite build artifacts used during instance creation resulting in arbitrary code execution due to weak protection of the artifacts.
 
 For example, if an attacker can replace an installation package (e.g. a .deb or .rpm file) stored in S3, then when the instance pulls teh package down as part of the User Data script, it will extract and execute the package as root giving the attacker code execution.
 
 ### Service
-* AWS EC2
+AWS EC2
 ### Status
-* Confirmed
+Confirmed
 ### Stride
 * Tampering
 * Elevation of Privilege
@@ -115,16 +115,16 @@ For example, if an attacker can replace an installation package (e.g. a .deb or 
 
 ## OCST-1.1.5
 ### Name
-* Instance search hijack
+Instance search hijack
 ### Description
-* An attacker can create a similarly named or tagged instance which is included in a search and therefore acted upon by some business logic. 
+An attacker can create a similarly named or tagged instance which is included in a search and therefore acted upon by some business logic. 
 
 For example, the attacker creates an instance with the tag "Name:WebService" that runs a modified ssh daemon that collects usernames and passwords. When the administrator attempts to SSH to each "Name:WebService" instance, it includes the attackers instance, thereby exposing the administrator's credentials.
 
 ### Service
-* AWS EC2
+AWS EC2
 ### Status
-* Confirmed
+Confirmed
 ### Stride
 * Spoofing
 ### Components
@@ -138,16 +138,16 @@ For example, the attacker creates an instance with the tag "Name:WebService" tha
 
 ## OCST-1.1.6
 ### Name
-* Security Group stacking
+Security Group stacking
 ### Description
-* An attacker is able to attach security groups to running instances thereby increasing the attack surface or allowing easier exfiltration of data where outbound connectivity is restricted.
+An attacker is able to attach security groups to running instances thereby increasing the attack surface or allowing easier exfiltration of data where outbound connectivity is restricted.
 
 If an attacker has the ability to create or attach existing security groups with more permissive rules to an instance, they may be able to reach newly exposed services running on the instance or they may be able to use outbound connectivity previously restricted.
 
 ### Service
-* AWS EC2
+AWS EC2
 ### Status
-* Confirmed
+Confirmed
 ### Stride
 * Tampering
 ### Components
