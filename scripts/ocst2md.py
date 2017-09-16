@@ -17,13 +17,13 @@ for threat in data["threats"]:
 
       if isinstance(threat[key], str):
         elem = threat[key]
-        if key == "mitigations":
+        if key == "mitigations" and elem.endswith(".feature"):
           print("[%s](%s%s)" % (elem, base_path, elem))
         else:
           print(elem)
       elif isinstance(threat[key], list):
         for elem in threat[key]:
-          if key == "mitigations":
+          if key == "mitigations" and elem.endswith(".feature"):
             print("* [%s](%s%s)" % (elem, base_path, elem))
           else:
             print("* %s" % elem)

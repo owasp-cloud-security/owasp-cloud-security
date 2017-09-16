@@ -50,9 +50,9 @@ Confirmed
 * IAM user
 * Access Key
 ### Mitigations
-* [Access key rotation. Either fixed time or dynamic using SSO](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Access key rotation. Either fixed time or dynamic using SSO)
-* [Detection and clean up of unused access keys and users](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Detection and clean up of unused access keys and users)
-* [Assume roles where possible](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Assume roles where possible)
+* Access key rotation. Either fixed time or dynamic using SSO
+* Detection and clean up of unused access keys and users
+* Assume roles where possible
 ### References
 * https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
@@ -77,7 +77,7 @@ Confirmed
 * Access Key
 * AWS Account (root user)
 ### Mitigations
-* [Do not use root access keys. Instead create separate administrative users or ideally users with the least privilege required for the use case.](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Do not use root access keys. Instead create separate administrative users or ideally users with the least privilege required for the use case.)
+* Do not use root access keys. Instead create separate administrative users or ideally users with the least privilege required for the use case.
 ### References
 * https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
@@ -99,7 +99,7 @@ Confirmed
 ### Components
 * IAM ManagedPolicy
 ### Mitigations
-* [Use customer managed policies with non-wildcard actions.](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use customer managed policies with non-wildcard actions.)
+* Use customer managed policies with non-wildcard actions.
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html
 
@@ -121,8 +121,8 @@ Confirmed
 * IAM User
 * Account Password Policy
 ### Mitigations
-* [Use a complex password policy such as having a minimum length and/or requiring specific character types.](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use a complex password policy such as having a minimum length and/or requiring specific character types.)
-* [Use federation (SSO)](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use federation (SSO))
+* Use a complex password policy such as having a minimum length and/or requiring specific character types.
+* Use federation (SSO)
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html
 
@@ -141,7 +141,7 @@ Confirmed
 ### Components
 * IAM AssumeRole
 ### Mitigations
-* [Use the optional ExternalId in a condition as a pre-shared key](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use the optional ExternalId in a condition as a pre-shared key)
+* Use the optional ExternalId in a condition as a pre-shared key
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
 * https://aws.amazon.com/blogs/security/tag/confused-deputy/
@@ -162,7 +162,7 @@ Confirmed
 * IAM AssumeRole
 * ExternalId
 ### Mitigations
-* [Use a long, securely generated random ExternalId](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use a long, securely generated random ExternalId)
+* Use a long, securely generated random ExternalId
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
 * https://aws.amazon.com/blogs/security/tag/confused-deputy/
@@ -184,7 +184,7 @@ Confirmed
 * Principals
 * AWS Accounts
 ### Mitigations
-* [Use specific users or roles as principals](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use specific users or roles as principals)
+* Use specific users or roles as principals
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Principal
 

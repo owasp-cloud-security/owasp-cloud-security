@@ -67,7 +67,7 @@ Confirmed
 ### Components
 * User Data
 ### Mitigations
-* [Use restrictive permissions on the User Data script](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Use restrictive permissions on the User Data script)
+* Use restrictive permissions on the User Data script
 ### References
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
 
@@ -86,7 +86,7 @@ Confirmed
 ### Components
 * Metadata service
 ### Mitigations
-* [TODO](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/TODO)
+* TODO
 ### References
 * https://blog.christophetd.fr/abusing-aws-metadata-service-using-ssrf-vulnerabilities/
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
@@ -109,7 +109,7 @@ Confirmed
 ### Components
 * User Data
 ### Mitigations
-* [Ensure all external artifacts used by a User Data script are sufficiently protected](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Ensure all external artifacts used by a User Data script are sufficiently protected)
+* Ensure all external artifacts used by a User Data script are sufficiently protected
 ### References
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
 
@@ -131,8 +131,8 @@ Confirmed
 * Instances
 * Tagging
 ### Mitigations
-* [Restrict the creation of new instances](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Restrict the creation of new instances)
-* [Apply detective controls to identify rogue instances](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Apply detective controls to identify rogue instances)
+* Restrict the creation of new instances
+* Apply detective controls to identify rogue instances
 ### References
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html
 
@@ -154,7 +154,7 @@ Confirmed
 * Security Groups
 * Instances
 ### Mitigations
-* [Restrict the ability to create, modify and attach security groups](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/Restrict the ability to create, modify and attach security groups)
+* Restrict the ability to create, modify and attach security groups
 ### References
 * https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html
 
