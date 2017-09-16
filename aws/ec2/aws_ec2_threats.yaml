@@ -11,7 +11,7 @@ threats:
     components:
       - User Data
     mitigations:
-      - Use KMS or other means of retrieving sensitive data
+      - aws/ec2/features/userdata_does_not_contain_sensitive_information.feature
     references:
       - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
 
