@@ -4,11 +4,16 @@ Feature: User data does not contain sensitive information
   Must not contain sensitive information 
   Mitigating against OCST-1.1.1
 
-  Scenario: Detecting sensitive information in user data
-    When we look at the user data
-    Then no sensitive information must be found # E.g. passwords, API keys, private keys, PII
+  @disabled
+  Scenario: Detecting sensitive information via lambda
+    Given the classification of sensitive information in sensitive_info.yaml
+    And a lambda function triggered by CloudFormation stack creation
+    When a new stack is created
+    Then the lambda function should not find any sensitive information in the user data of the stack
 
-  Scenario: Using a secret managements system
+  @disabled
+  Scenario: Using a secrets managements system
     Given a secrets management system # E.g. KMS, HashiCorp Vault
-    When user data needs access to sensitive information
-    Then it should retrieve the data it needs at the point of use
+    And a lambda function triggered by CloudFormation stack creation
+    When a new stack is created
+    Then the lambda function should find the secrets management client at the point of use
