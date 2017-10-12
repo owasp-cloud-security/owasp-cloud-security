@@ -40,7 +40,10 @@ Amazon Web Service's virtual computing service.
 ### Name
 User Data contains sensitive data
 ### Description
-An attacker may be able to gain access to sensitive information if it is stored in User Data, especially if they have read access to CloudFormation. Secret data such as passwords, API or pre-shared keys should not be placed directly in UserData.
+An attacker may be able to gain access to sensitive information if it is
+stored in User Data, especially if they have read access to CloudFormation. 
+Secret data such as passwords, API or pre-shared keys should not be placed 
+directly in UserData.
 
 ### Service
 AWS EC2
