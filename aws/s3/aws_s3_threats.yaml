@@ -1,0 +1,19 @@
+threats:
+
+  - id: OCST-1.2.1
+    name: Hiding malicious data within object version history
+    description: |
+      An attacker can hide a malicious file in the version history of a
+      benign object and can later reference that file using the VersionId
+      and a PreSigned URL.
+    service: AWS S3
+    status: Exploited
+    stride:
+      - Spoofing
+    components:
+      - Bucket versioning
+    mitigations:
+      - aws/s3/features/prevent_bucket_version_abuse.feature
+    references:
+      - http://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html
+      - aws/s3/tools/s3bury

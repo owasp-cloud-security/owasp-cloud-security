@@ -1,0 +1,1 @@
+e967856354469b88f2c3227829929ec24edb6655a8514a324aa30aa662ce6fff 0x10-s3bury [07/Oct/2017:22:20:07 +0000] 82.42.199.185 arn:aws:iam::626196804660:user/fraser_api 282BFC2CD677ED8A REST.PUT.OBJECT meh.txt "PUT /meh.txt HTTP/1.1" 200 - - 4 54 5 "-" "aws-cli/1.11.34 Python/2.7.12 Linux/4.4.0-83-generic botocore/1.4.91" -
