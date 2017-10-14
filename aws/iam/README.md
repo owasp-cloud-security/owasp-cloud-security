@@ -188,3 +188,23 @@ Confirmed
 ### References
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Principal
 
+## OCST-1.3.8
+### Name
+Use of wildcard principals
+### Description
+Inappropriate use of wildcard ("*") principals may allow an attacker to escalate privileges.
+
+### Service
+AWS IAM
+### Status
+Confirmed
+### Stride
+* Elevation of privilege
+### Components
+* IAM AssumeRole
+* Principals
+### Mitigations
+* [aws/iam/features/wildcard_principals_not_used.feature](https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/aws/iam/features/wildcard_principals_not_used.feature)
+### References
+* http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html
+
