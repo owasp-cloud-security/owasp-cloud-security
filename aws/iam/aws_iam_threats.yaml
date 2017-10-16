@@ -135,7 +135,10 @@ threats:
   - id: OCST-1.3.8
     name: Use of wildcard principals
     description: |
-      Inappropriate use of wildcard ("*") principals may allow an attacker to escalate privileges. This is because the wildcard principal includes any principal, not just those in the same account. This will, unless strictly controlled, open the resource to any valid AWS principal.
+      Inappropriate use of wildcard ("*") principals may allow an attacker to 
+      escalate privileges. This is because the wildcard principal includes any 
+      principal, not just those in the same account. This will, unless strictly 
+      controlled, open the resource to any valid AWS principal.
     service: AWS IAM
     status: Confirmed
     stride:
