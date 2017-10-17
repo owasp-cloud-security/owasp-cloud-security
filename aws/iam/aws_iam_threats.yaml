@@ -149,5 +149,6 @@ threats:
     mitigations:
       - aws/iam/features/wildcard_principals_not_used.feature
     references:
+      - https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html
       - http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html
 
