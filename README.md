@@ -103,7 +103,7 @@ Whether you're new to the cloud, a cloud expert, a seasoned pentester, or a juni
 * Identifying threats documented in standards, whitepapers etc (please credit and provide references)
 * Simply having a play to see what you can do/break
 
-If you think you've found a new threat, but don't have time to research or test it, that's fine. Please just create a [Github issue]() for somebody else to continue the research and documentation.
+If you think you've found a new threat, but don't have time to research or test it, that's fine. Please just create a [Github issue](#working-with-github-issues) for somebody else to continue the research and documentation.
 
 For more information on threat modelling, see the [Learning more](#learning-more) section.
 
