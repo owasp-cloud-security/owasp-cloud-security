@@ -32,6 +32,7 @@ You can find the main OWASP Project page here: https://www.owasp.org/index.php/O
             * [Cloud provider](#cloud-provider)
             * [Special](#special)
          * [Github projects](#github-projects)
+      * [Creating Github issues](#creating-github-issues)
       * [Creating pull requests (PRs)](#creating-pull-requests-prs)
    * [Using the OWASP Cloud Security project](#using-the-owasp-cloud-security-project)
       * [Threat models](#threat-models)
@@ -222,6 +223,14 @@ Each board is made up columns that represent the various stages of a issue's lif
 Issues have to be added to a project first, then triaged to the backlog. There is no Done column as this is handled by closing the issues.
 
 For more information on Google projects, see the [Github documentation](https://help.github.com/articles/about-project-boards/).
+
+## Creating Github issues
+
+When you create a new Github issue, please:
+
+* Add a description so other other people have the full context and are able to pick up the issue if needed.
+* If possible, use the labels to identify the issue type etc.
+* If possible, assign the issue to the appropriate project
 
 ## Creating pull requests (PRs)
 
