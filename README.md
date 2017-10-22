@@ -42,13 +42,13 @@ You can create a new Github issue for pretty much anything, including:
 
 If you're looking for a way to help out, but you're not sure where to start, take a look at the list of issues for something you could work on.
 
-For more information, see the [Working with Github issues]() section.
+For more information, see the [Working with Github issues](#working-with-github-issues) section.
 
 ### Pull requests
 
 If you want to just get stuck straight in, you can create Github pull requests (PRs) with your changes. You don't need to create an issue first. Your PR will then be reviewed. If all is well, your PR will be merged into the repository. If there are questions, these will be done via the comments on the PR.
 
-For more information, see the [Creating pull requests]() section.
+For more information, see the [Creating pull requests](#creating-pull-requests-prs) section.
 
 ## What needs doing
 
@@ -67,7 +67,7 @@ Whether you're new to the cloud, a cloud expert, a seasoned pentester, or a juni
 
 If you think you've found a new threat, but don't have time to research or test it, that's fine. Please just create a [Github issue]() for somebody else to continue the research and documentation.
 
-For more information on threat modelling, see the []() section.
+For more information on threat modelling, see the [Learning more](#learning-more) section.
 
 #### Scope
 
@@ -88,7 +88,7 @@ The following types of threats are **not in scope**:
 
 In an ideal world you would identify a new threat, test and prove it, then document it so that it is immediately consumable by users of this project. However, that probably isn't always going to be realistic. So it makes sense to differentiate between discovering threats and documenting them.
 
-You will find [Github issues]() for new threats that need verifying and then documenting. For more information on how threats are documented, see the [Project structure]() section.
+You will find [Github issues](#working-with-github-issues) for new threats that need verifying and then documenting. For more information on how threats are documented, see the [Project structure](#project-structure) section.
 
 ### Identifying controls
 
@@ -100,7 +100,7 @@ There are many different ways of dealing with a threat, and these are typically 
 * Detection
 * Remediation
 
-If you have a currently undocumented way of mitigating against a particular threat you can create a [Github issue]() with a summary of control requirements and any supporting documentation. The controls can then be turned into BDD feature stories (see the next section).
+If you have a currently undocumented way of mitigating against a particular threat you can create a [Github issue](#working-with-github-issues) with a summary of control requirements and any supporting documentation. The controls can then be turned into BDD feature stories (see the next section).
 
 ### Documenting controls
 
@@ -108,7 +108,7 @@ Behaviour Driven Development (BDD) expresses an idea such as a requirement or us
 
 If you have identified a control that is missing from the project, you can either create a simple Github issue with the details, or write a new BDD story in an existing or new feature file.
 
-For more information about BDD, see the [Learning more]() section below.
+For more information about BDD, see the [Learning more](#learning-more) section below.
 
 ### Community development
 
@@ -130,7 +130,7 @@ These goals are achieved in a number of ways:
 * Talking at events about the project, threat modelling or using BDD for security
 * Having a well managed project that allows contributors (who volunteer their time) to help out with minimal hassle
 
-If you think you can help achieve these goals, take a look at the [community Github issues]().
+If you think you can help achieve these goals, take a look at the [community Github issues](#working-with-github-issues).
 
 ## Working with Github issues
 
