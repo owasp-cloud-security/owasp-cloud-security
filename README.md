@@ -35,24 +35,24 @@ This project uses [Github issues](https://github.com/owasp-cloud-security/owasp-
 
 You can create a new Github issue for pretty much anything, including:
 
-* You have an idea for a possible threat but don't have time to research or fully document
+* You have an idea for a possible threat but don't have time to research or fully document it
 * You want to propose an idea for how the community could collaborate more effectively
 * You found a typo or some other error but are not able to submit a pull request with changes
 * There's some key documentation missing
 
-If you're looking for a way to help out, but you're not sure where to start, then take a look at the list of issues for something you could work on.
+If you're looking for a way to help out, but you're not sure where to start, take a look at the list of issues for something you could work on.
 
 For more information, see the [Working with Github issues]() section.
 
 ### Pull requests
 
-If you want to just get stuck straight in, you can create Github pull requests (PR) with your changes. You don't need to create an issue first. Your PR will then be reviewed. If all is well, your PR will be merged into the repository. If there are questions, these will be done via the comments on the PR.
+If you want to just get stuck straight in, you can create Github pull requests (PRs) with your changes. You don't need to create an issue first. Your PR will then be reviewed. If all is well, your PR will be merged into the repository. If there are questions, these will be done via the comments on the PR.
 
 For more information, see the [Creating pull requests]() section.
 
 ## What needs doing
 
-This project is still in its infancy, so there's plenty of things to do. Also, as Cloud security is an ever-expanding landscape, there will always be plenty of things to do ;)
+This project is still in its infancy, so there's plenty of things to do. Also, as cloud security is an ever-expanding landscape, there will always be plenty of things to do ;)
 
 The following sections detail the different types of activities you can participate in.
 
@@ -82,11 +82,11 @@ The following types of threats are **not in scope**:
 * Threats associated with the cloud provider itself. If you find a problem with their API authentication, please don't add it here - raise it to their security team directly ;)
 * General, non-cloud threats. Although you may be running a Linux host on AWS EC2, this project does cover threat modelling Linux hosts.
 
-**Please note:** If you're think about contributing threats that you discovered at work or while working with a client etc. please make sure you have permission to contribute them and that you don't expose proprietary or sensitive information.
+**Please note:** If you're thinking about contributing threats that you discovered at work or while working with a client etc. please make sure you have permission to contribute them and that you don't expose proprietary or sensitive information.
 
 ### Documenting threats
 
-In an ideal world you would identify a new threat, test and prove it, then document it so that it is immediately consumable by users of this project. However, that probably isn't always going to be realistic. So it makes sense to differentiate between discovering threats and documenting threats.
+In an ideal world you would identify a new threat, test and prove it, then document it so that it is immediately consumable by users of this project. However, that probably isn't always going to be realistic. So it makes sense to differentiate between discovering threats and documenting them.
 
 You will find [Github issues]() for new threats that need verifying and then documenting. For more information on how threats are documented, see the [Project structure]() section.
 
@@ -104,9 +104,11 @@ If you have a currently undocumented way of mitigating against a particular thre
 
 ### Documenting controls
 
-Behaviour Driven Development (BDD) expresses an idea such as a requirement or user experience in a way that is natural to read but can be tested as code. BDD seems to fit particularly well for security as it allows technical experts to express requirements for mitigating controls as something that can be easily understood by management and auditors and then prove that those requirements are being met through the use of continuous testing. Gherkin, the language generally used for BDD, is mostly agnostic to the underlying implementation. This allows different organisations to take the exact same requirement story and them implement it in a way that best suits that organisation.
+Behaviour Driven Development (BDD) expresses an idea such as a requirement or user experience in a way that is natural to read but can be tested as code. BDD seems to fit particularly well for security as it allows technical experts to express requirements for mitigating controls as something that can be easily understood by management and auditors, and then prove that those requirements are being met through the use of continuous testing. Gherkin, the language generally used for BDD, is mostly agnostic to the underlying implementation. This allows different organisations to take the exact same requirements story and them implement it in a way that best suits that organisation.
 
 If you have identified a control that is missing from the project, you can either create a simple Github issue with the details, or write a new BDD story in an existing or new feature file.
+
+For more information about BDD, see the [Learning more]() section below.
 
 ### Community development
 
@@ -136,13 +138,7 @@ Github issues are the primary way of tracking work for the project.
 
 ### Labels
 
-Labels are used to group issues in a number of different ways and can be combined as needed.
-
-#### Cloud provider
-
-* aws
-* azure
-* gcp
+Labels are used to group issues in a number of different ways and can be combined as needed. So an idea for a new AWS threat would be labelled with threat\_model, idea and aws.
 
 #### Subject
 
@@ -157,6 +153,12 @@ Labels are used to group issues in a number of different ways and can be combine
 * bug
 * enhancement
 * question
+
+#### Cloud provider
+
+* aws
+* azure
+* gcp
 
 #### Special
 
@@ -179,9 +181,9 @@ Each board is made up columns that represent the various stages of a issue's lif
 * In progress - People are actively working on these issues
 * Review - These issues have been completed and require peer review from the community
 
-There is no Done column as this is handled by closing the issues.
+Issues have to be added to a project first, then triaged to the backlog. There is no Done column as this is handled by closing the issues.
 
-For more information on Kanban boards, see the [Wikipedia article](https://en.wikipedia.org/wiki/Kanban_(development))
+For more information on Google projects, see the [Github documentation](https://help.github.com/articles/about-project-boards/).
 
 ## Creating pull requests (PRs)
 
