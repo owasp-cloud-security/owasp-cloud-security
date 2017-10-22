@@ -11,6 +11,44 @@ This project provides the following for an ever-expanding list of cloud provider
 
 You can find the main OWASP Project page here: https://www.owasp.org/index.php/OWASP_Cloud_Security_Project
 
+# Table of Contents
+
+   * [Getting involved](#getting-involved)
+      * [Ways to participate](#ways-to-participate)
+         * [Join the discussion](#join-the-discussion)
+         * [Github issues](#github-issues)
+         * [Pull requests](#pull-requests)
+      * [What needs doing](#what-needs-doing)
+         * [Discovering new threats](#discovering-new-threats)
+            * [Scope](#scope)
+         * [Documenting threats](#documenting-threats)
+         * [Identifying controls](#identifying-controls)
+         * [Documenting controls](#documenting-controls)
+         * [Community development](#community-development)
+      * [Working with Github issues](#working-with-github-issues)
+         * [Labels](#labels)
+            * [Subject](#subject)
+            * [Issue type](#issue-type)
+            * [Cloud provider](#cloud-provider)
+            * [Special](#special)
+         * [Github projects](#github-projects)
+      * [Creating pull requests (PRs)](#creating-pull-requests-prs)
+   * [Using the OWASP Cloud Security project](#using-the-owasp-cloud-security-project)
+      * [Threat models](#threat-models)
+      * [BDD stories](#bdd-stories)
+   * [Project structure](#project-structure)
+      * [Directory structure](#directory-structure)
+      * [Threat model yaml files](#threat-model-yaml-files)
+         * [Fields](#fields)
+            * [id](#id)
+            * [status](#status)
+   * [Learning more](#learning-more)
+      * [Threat modelling](#threat-modelling)
+      * [Behaviour driven development](#behaviour-driven-development)
+      * [Cloud](#cloud)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
 # Getting involved
 
 This project was created to pool together the experience and expertise of people just like you, so that others can build better and more secure products and services in the cloud. Your contributions are essential!
