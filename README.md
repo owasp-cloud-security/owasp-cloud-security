@@ -199,13 +199,29 @@ For more information see the [Github documentation](https://help.github.com/arti
 
 # Using the OWASP Cloud Security project
 
+This project can be used in many different ways, but typically it will involve using the threat models in your SDLC, then using the BDD stories to ensure you mitigated against identified threats.
+
 ## Threat models
 
-Coming soon!
+There is no single correct way to threat model. There are different methodologies, each with differing levels of formality and strengths etc.  Formal threat modelling as part of the SDLC can seem like a daunting task, so this project aims to make it easier to get started with threat modelling cloud based products and services by providing a library of threats that other people have idenitied.
+
+If you're looking to do formal threat modelling sessions, you can reference the threats in the project as you work through the components of your cloud service. You may find that the threats in this project lead on to ideas for other cloud related threats, or perhaps they help you identified issues and assumptions in the design and architecture of your application. If you find new threats, please consider [contributing them back to the project](#discovering-new-threats)!
+
+If you aren't running formal threat modelling sessions, then you can simply read through the threats and think about how they might apply to your product and service. If you think a threat is relevant, create a bug or story on your backlog to make sure you address it at some point.
+
+For more information on threat modelling, take a look at the [Learning more](#learning-more) section.
 
 ## BDD stories
 
-Coming soon!
+Once you have identified threats that are relevant to your environment, the next step is to think about what to do about those threats. This project provides mitigating controls in the form of Behaviour Driven Development (BDD) feature stories. BDD expresses an idea such as a requirement or user experience in a way that is natural to read but can be tested as code. BDD seems to fit particularly well for security as it allows technical experts to express requirements for mitigating controls as something that can be easily understood by management and auditors, and then prove that those requirements are being met through the use of continuous testing. Gherkin, the language generally used for BDD, is mostly agnostic to the underlying implementation. This allows different organisations to take the exact same requirements story and them implement it in a way that best suits that organisation.
+
+Depending on your levels of automation, approaches to testing, and general engineering maturity, you have several options for using the BDD stories.
+
+The simplest way to use the stories is to treat them as just another form of documentation and to then somehow check that you have controls in place that map to the stories. You could paste the relevent scenarios into issues on your project backlogs so that an engineer picks up the task of testing or implementing the control.
+
+The more advanced way of using the BDD stories is to write test implementations that enable you to continuously test the assumption that you have controls in place and that they are indeed effective. Because different organisations prefer different techonology stacks, it is up to you to choose and development the test implementations for the BDD stories. For example, you could use Python's behave library from a Jenkins server, or use Cucumber on CircleCI. Use the technology that works best for you.
+
+For more information on BDD, see the [Learning more](#learning-more) section.
 
 # Project structure
 
@@ -278,13 +294,23 @@ The status field is used to indicate the state of the threat. Some threats are s
 
 ## Threat modelling
 
-Coming soon!
+If you would like to learn more about threat modelling, take a look at the [OWASP Threat Modeling](https://www.owasp.org/index.php/Category:Threat_Modeling) pages.
 
 ## Behaviour driven development
 
-Coming soon!
+For a bit of an overview of BDD, take a look at the [Wikipedia](https://en.wikipedia.org/wiki/Behavior-driven_development) page.
+
+There are number of different BDD implementations:
+
+* [Cucumber](https://cucumber.io/)
+* [Python behave](https://pythonhosted.org/behave/)
+* [JBehave](http://jbehave.org/)
+* plus many more!
 
 ## Cloud
 
-Coming soon!
+If you're just getting started with the cloud, your best starting point will be the documentation provided by your cloud provider.
 
+* [Amazon Web Services](https://aws.amazon.com/documentation/)
+* [Microsoft Azure](https://docs.microsoft.com/en-us/azure/)
+* [Google Cloud Platform](https://cloud.google.com/docs/)
