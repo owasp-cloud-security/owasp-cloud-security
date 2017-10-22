@@ -3,7 +3,7 @@ threats:
   - id: OCST-1.1.1
     name: User Data contains sensitive data
     description: |
-      An attacker may be able to gain access to sensitive information if it is
+      An attacker can gain access to sensitive information if it is
       stored in User Data, especially if they have read access to CloudFormation. 
       Secret data such as passwords, API or pre-shared keys should not be placed 
       directly in UserData.
@@ -21,7 +21,7 @@ threats:
   - id: OCST-1.1.2
     name: Tampering of User Data
     descripton: |
-      Weak protection of the User Data script may allow an attacker modify the User Data an inject mallicious commands that will execute as part of the instance creation.
+      Weak protection of the User Data script allows an attacker modify the User Data an inject mallicious commands that will execute as part of the instance creation.
 
       For example, weak file permissions or in appropriate access restrictions on a CI/CD job may result in tampering.
     service: AWS EC2
@@ -91,7 +91,7 @@ threats:
   - id: OCST-1.1.6
     name: Security Group stacking
     description: |
-      An attacker is able to attach security groups to running instances thereby increasing the attack surface or allowing easier exfiltration of data where outbound connectivity is restricted.
+      An attacker can attach security groups to running instances thereby increasing the attack surface or allowing easier exfiltration of data where outbound connectivity is restricted.
 
       If an attacker has the ability to create or attach existing security groups with more permissive rules to an instance, they may be able to reach newly exposed services running on the instance or they may be able to use outbound connectivity previously restricted.
     service: AWS EC2
