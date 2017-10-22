@@ -172,7 +172,7 @@ If you think you can help achieve these goals, take a look at the [community Git
 
 ## Working with Github issues
 
-Github issues are the primary way of tracking work for the project. 
+Github issues are the primary way of tracking work for the project. You can find the list of all Github issues [here](https://github.com/owasp-cloud-security/owasp-cloud-security/issues), but you'll probably want to read the Github projects section below.
 
 ### Labels
 
