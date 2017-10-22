@@ -157,8 +157,8 @@ There are many non-technical ways to get involved in the project, so if you need
 The goal of community development is to:
 
 * Raise awareness
-* Make sure it's easy to use
-* Make sure it's easy to contribute
+* Make sure the project is easy to use
+* Make sure the project is easy to contribute to
 
 These goals are achieved in a number of ways:
 
