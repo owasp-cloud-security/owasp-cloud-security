@@ -31,7 +31,7 @@ If you would like to get in touch with the project leader directly, you can do s
 
 ### Github issues
 
-This project uses [Github issues](https://github.com/owasp-cloud-security/owasp-cloud-security/issues) as the primary way of tracking tasks, problems and ideas etc. 
+This project uses [Github issues](#working-with-github-issues) as the primary way of tracking tasks, problems and ideas etc. 
 
 You can create a new Github issue for pretty much anything, including:
 
@@ -273,7 +273,6 @@ The status field is used to indicate the state of the threat. Some threats are s
 * Unconfirmed - The threat is a what-if and may not actually even be possible. Further research is required.
 * Confirmed - The threat has been confirmed through research.
 * Exploited - A known attack tool or exploit exists for the threat.
-
 
 # Learning more
 
