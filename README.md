@@ -217,7 +217,9 @@ Each board is made up columns that represent the various stages of a issue's lif
 
 * Backlog - The list of all things that should be done at some point
 * Ready - The issues that have been prioritized and will be worked on next
-* In progress - People are actively working on these issues
+* Research - The issue is being researched (threats and BDD)
+* Documentation - The research is complete and the threat or BDD story is being documented (threats and BDD)
+* In progress - People are actively working on these issues (community)
 * Review - These issues have been completed and require peer review from the community
 
 Issues have to be added to a project first, then triaged to the backlog. There is no Done column as this is handled by closing the issues.
