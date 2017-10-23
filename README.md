@@ -131,7 +131,7 @@ You will find [Github issues](#working-with-github-issues) for new threats that 
 
 ### Identifying controls
 
-Identifying and documenting threats is only half the story (pun intended). The true value of this project is helping understand what they can do about the threats. This project uses Behaviour Driven Development (BDD) feature stories as a way of expressing requirements for mitigating controls. People can then take these requirements stories and, as they see fit, implement as mitigating controls in their environments.
+Identifying and documenting threats is only half the story (pun intended). The true value of this project is helping people understand what they can do about the threats. This project uses Behaviour Driven Development (BDD) feature stories as a way of expressing requirements for mitigating controls. People can then take these requirements stories and, as they see fit, implement as mitigating controls in their environments.
 
 There are many different ways of dealing with a threat, and these are typically split into the following types of controls:
 
