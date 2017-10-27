@@ -66,7 +66,7 @@ The simplest way to get involved is to reach out to other members of the communi
 * [#cloud-security on the OWASP Slack](https://owasp.slack.com/messages/C7FRASYET/)
 * Email - mailing list coming soon!
 
-If you would like to get in touch with the project leader directly, you can do so via email to fraser@0x10.co
+If you would like to get in touch with the project leader directly, you can do so via email to fraser.scott@owasp.org
 
 ### Github issues
 
