@@ -1,0 +1,17 @@
+id: OCST-1.1.1
+name: User Data contains sensitive data
+description: |
+  An attacker may be able to gain access to sensitive information if it is
+  stored in User Data, especially if they have read access to CloudFormation. 
+  Secret data such as passwords, API or pre-shared keys should not be placed 
+  directly in UserData.
+service: AWS EC2
+status: Confirmed
+stride:
+  - Information disclosure
+components:
+  - User Data
+mitigations:
+  - aws/ec2/features/userdata_does_not_contain_sensitive_information.feature
+references:
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
