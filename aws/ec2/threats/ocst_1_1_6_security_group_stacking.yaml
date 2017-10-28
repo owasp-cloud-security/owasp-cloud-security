@@ -3,7 +3,7 @@ name: Security Group stacking
 description: |
   An attacker is able to attach security groups to running instances thereby increasing the attack surface or allowing easier exfiltration of data where outbound connectivity is restricted.
 
-  If an attacker has the ability to create or attach existing security groups with more permissive rules to an instance, they may be able to reach newly exposed services running on the instance or they may be able to use outbound connectivity previously restricted.
+  If an attacker has the ability to create or attach existing security groups with more permissive rules to an instance, they can reach newly exposed services running on the instance or they may be able to use outbound connectivity previously restricted.
 service: AWS EC2
 status: Confirmed
 stride:

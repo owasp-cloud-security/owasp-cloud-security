@@ -1,7 +1,7 @@
 id: OCST-1.1.2
 name: Tampering of User Data
 description: |
-  Weak protection of the User Data script may allow an attacker modify the User Data an inject mallicious commands that will execute as part of the instance creation.
+  Weak protection of the User Data script allows an attacker modify the User Data an inject mallicious commands that will execute as part of the instance creation.
 
   For example, weak file permissions or in appropriate access restrictions on a CI/CD job may result in tampering.
 service: AWS EC2

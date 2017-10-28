@@ -66,7 +66,7 @@ The simplest way to get involved is to reach out to other members of the communi
 * [#cloud-security on the OWASP Slack](https://owasp.slack.com/messages/C7FRASYET/)
 * Email - mailing list coming soon!
 
-If you would like to get in touch with the project leader directly, you can do so via email to fraser@0x10.co
+If you would like to get in touch with the project leader directly, you can do so via email to fraser.scott@owasp.org
 
 ### Github issues
 
@@ -131,7 +131,7 @@ You will find [Github issues](#working-with-github-issues) for new threats that 
 
 ### Identifying controls
 
-Identifying and documenting threats is only half the story (pun intended). The true value of this project is helping understand what they can do about the threats. This project uses Behaviour Driven Development (BDD) feature stories as a way of expressing requirements for mitigating controls. People can then take these requirements stories and, as they see fit, implement as mitigating controls in their environments.
+Identifying and documenting threats is only half the story (pun intended). The true value of this project is helping people understand what they can do about the threats. This project uses Behaviour Driven Development (BDD) feature stories as a way of expressing requirements for mitigating controls. People can then take these requirements stories and, as they see fit, implement as mitigating controls in their environments.
 
 There are many different ways of dealing with a threat, and these are typically split into the following types of controls:
 
