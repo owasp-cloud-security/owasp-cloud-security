@@ -290,54 +290,49 @@ Each service directory contains the following files and directories:
 
 The threat model structures are loosely based off the advice in https://blogs.msdn.microsoft.com/adioltean/2005/01/17/ten-tips-how-to-write-a-well-structured-threat-model-document/
 
-Threats are stored in YAML files:
+Threats are stored in YAML files in a threats directory for each provider service. For example:
 
-    threats:
-      - id: <OCST id>
-        name: <short name>
-        description: |
-          <long description>
-        service: <platform and service name>
-        status: <status name>
-        stride: <one or more of>
-          - Spoofing
-          - Tampering
-          - Repudiation
-          - Information disclosure
-          - Denial of service
-          - Elevation of privilege
-        components:
-          - <related platform/service components>
-        mitigations:
-          - <mitigation descriptions or references>
-        references:
-          - <relevant documentation>
+    id: OCST-1.3.1
+    name: Unprotected access keys
+    description: |
+      Attacker can gain unauthorised access to resources using unprotected AWS access keys.
+
+      If an AWS user doesn't sufficiently protect their access keys, for example by leaving them on a server, then an attacker could use those keys to gain access to any resources assigned to those keys.
+
+      Because the use of the API access keys is global, the attacker doesn't need to be an account already if the keys are exposed outside of AWS.  
+    service: AWS IAM
+    status: Confirmed
+    stride:
+      - Information disclosure
+      - Elevation of privilege
+    components:
+      - IAM user
+      - Access Key
+    mitigations:
+      - Access key rotation. Either fixed time or dynamic using SSO
+      - Detection and clean up of unused access keys and users
+      - Assume roles where possible
+    references:
+      - https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
+      - https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
+
+The specification for the YAML files is defined here: https://github.com/owasp-cloud-security/owasp-cloud-security/blob/master/features/threat_yaml_file.feature
+
+### Running feature tests
+
+The BDD feature for the threat YAML files is tested using Python's behave package. A wrapper script will set the enviroment variable for the fiven threat file:
+
+     $ ./scripts/test_threat_file.sh aws/ec2/threats/ocst_1_1_2_user_data_tampering.yaml
+
+You can also run the wrapper script against all threat files:
+
+     $ ./scripts/test_threat_file.sh --all
+
+### Generating the README.md files
 
 The service threat model README.md files can be generated using the following command:
 
     $ ./scripts/generate_readmes.sh
-
-### Fields
-
-#### id
-
-For threats the Id field is structured as follows:
-
-    OCST-<platform_id>-<service_id>-<threat_id>
-
-So if for example the Id is
-
-    OCST-1.3.1
-
-then the first 1 refers to the AWS platform, the 3 refers to the IAM service, and the second 1 refers to the threat number. In this case it is the first AWS IAM threat.
-
-#### status
-
-The status field is used to indicate the state of the threat. Some threats are simply a what-if that may in fact not be possible, whereas others have public attack tools/exploits. The following field values are used:
-
-* Unconfirmed - The threat is a what-if and may not actually even be possible. Further research is required.
-* Confirmed - The threat has been confirmed through research.
-* Exploited - A known attack tool or exploit exists for the threat.
 
 # Learning more
 
