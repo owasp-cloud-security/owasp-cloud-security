@@ -62,7 +62,7 @@ There are a number of different ways you can participate in the project.
 
 The simplest way to get involved is to reach out to other members of the community. If you would like to ask questions, discuss ideas or problems, or even just share your thoughts you can do so in a number of ways:
 
-* [@OWASP_CloudSec on Twitter](twitter.com/owasp_cloudsec)
+* [@OWASP_CloudSec on Twitter](https://twitter.com/OWASP_CloudSec)
 * [#cloud-security on the OWASP Slack](https://owasp.slack.com/messages/C7FRASYET/)
 * Email - mailing list coming soon!
 
