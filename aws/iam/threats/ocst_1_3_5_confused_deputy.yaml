@@ -1,0 +1,17 @@
+id: OCST-1.3.5
+name: Confused deputy
+description: |
+    An attacker can perform the confused deputy attack by tricking a trusted third party into assuming the role of an ARN in another account.
+
+    [...] Example Corp requires access to certain resources in your AWS account. But in addition to you, Example Corp has other customers and needs a way to access each customer's AWS resources. Instead of asking its customers for their AWS account access keys, which are secrets that should never be shared, Example Corp requests a role ARN from each customer. But if another Example Corp customer were able to guess or obtain your role ARN, that customer could then use your role ARN to gain access to your AWS resources by way of Example Corp. This form of privilege escalation is known as the confused deputy problem. (from the AWS documentation, see the references)
+service: AWS IAM
+status: Confirmed
+stride:
+  - Elevation of privilege
+components:
+  - IAM AssumeRole
+mitigations:
+  - Use the optional ExternalId in a condition as a pre-shared key
+references:
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html
+  - https://aws.amazon.com/blogs/security/tag/confused-deputy/

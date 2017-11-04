@@ -1,0 +1,17 @@
+id: OCST-1.3.3
+name: Unexpected AWS ManagedPolicy updates 
+description: |
+  An attacker can gain elevated permissions through unexpected AWS ManagedPolicy updates.
+
+  If the organisation uses AWS provided ManagedPolicies, then they may not be aware of the updates made by AWS to those policies. If AWS introduces additional services or actions, then the organisation may have additional exposure that they're not aware of. An attacker that knows about the updates may be able to use this to their advantage.
+
+service: AWS IAM
+status: Confirmed
+stride: 
+  - Elevation of privilege
+components:
+  - IAM ManagedPolicy
+mitigations:
+  - Use customer managed policies with non-wildcard actions.
+references:
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html

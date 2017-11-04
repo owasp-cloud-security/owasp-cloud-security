@@ -1,0 +1,17 @@
+id: OCST-1.1.4
+name: Replacing User Data artifacts
+description: |
+  An attacker is able to overwrite build artifacts used during instance creation resulting in arbitrary code execution due to weak protection of the artifacts.
+
+  For example, if an attacker can replace an installation package (e.g. a .deb or .rpm file) stored in S3, then when the instance pulls teh package down as part of the User Data script, it will extract and execute the package as root giving the attacker code execution.
+service: AWS EC2
+status: Confirmed
+stride:
+  - Tampering
+  - Elevation of privilege
+components:
+  - User Data
+mitigations:
+  - aws/ec2/features/protect_user_data_artifacts.feature
+references:
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html

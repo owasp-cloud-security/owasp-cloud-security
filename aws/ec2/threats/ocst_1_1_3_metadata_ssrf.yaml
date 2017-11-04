@@ -1,0 +1,20 @@
+id: OCST-1.1.3
+name: Metadata Server Side Request Forgery
+description: |
+  A server side request forgery (SSRF) vulnerability in an application running on EC2 allows an
+  attacker to access the AWS EC2 metadata service resulting in information disclosure.
+
+  For example, an attacker is able to access http:/169.254.169.254/latest/user-data and retrieve
+  the instance's user data script.
+service: AWS EC2
+status: Confirmed
+stride:
+  - Information disclosure
+components:
+  - Metadata service
+mitigations:
+  - aws/ec2/features/limit_exposure_of_metadata_service.feature
+references:
+  - https://blog.christophetd.fr/abusing-aws-metadata-service-using-ssrf-vulnerabilities/
+  - https://www.owasp.org/index.php/Server_Side_Request_Forgery
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
