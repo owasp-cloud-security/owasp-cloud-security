@@ -6,11 +6,28 @@ def step_impl(context, env_name):
   if not hasattr(context, "filename"):
     context.filename = os.environ.get(env_name)
 
-@given('the yaml file has been loaded')
+@given('the threat feature file has been loaded')
 def step_impl(context):
   if not hasattr(context, "file_data"):
+    process_comments = True
+    metadata_lines = []
+    story_lines = []
     with open(context.filename) as fh:
-      context.file_data = yaml.load(fh)
+      for line in fh.readlines():
+        match = re.match(r'^\s*#\s*(.*)$', line)
+        if process_comments and match:
+          metadata_lines.append(match.group(1))
+        else:
+          match = re.match(r'^\s*Feature:\s*(.*)$', line)
+          if match:
+            process_comments = False
+            metadata_lines.append("Name: %s" % match.group(1))
+            story_lines.append(line)
+        if not process_comments:
+          story_lines.append(line)
+
+    context.file_data = yaml.load("\n".join(metadata_lines))
+    context.file_data["Story"] = "\n".join(story_lines)
 
 @then('the parent directory must be "{parent}"')
 def step_impl(context, parent):
@@ -42,13 +59,13 @@ def step_impl(context, field, field_type):
   }
   assert isinstance(context.file_data[field], type_map[field_type])
 
-@then('the id must be the same as the filename id')
+@then('the Id must be the same as the filename Id')
 def step_impl(context):
   basename = os.path.basename(context.filename)
-  match = re.search(r'^ocst_(\d+)_(\d+)_(\d+)[a-z0-9_]*\.yaml$', basename)
+  match = re.search(r'^ocst_(\d+)_(\d+)_(\d+)[a-z0-9_]*\.feature$', basename)
   assert match
   ocst_id = "OCST-%s.%s.%s" % (match.group(1), match.group(2), match.group(3))
-  assert context.file_data["id"] == ocst_id
+  assert context.file_data["Id"] == ocst_id
 
 @then('the "{field}" field length must be {operation} "{length:d}" characters')
 def step_impl(context, field, operation, length):
