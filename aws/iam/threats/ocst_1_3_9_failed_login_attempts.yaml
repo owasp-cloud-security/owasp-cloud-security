@@ -1,0 +1,17 @@
+id: OCST-1.3.9
+name: Failed login attempts go un-noticed
+description: |
+  CloudTrail is not enabled by default. Unsuccessful login attempts will not be logged unless CloudTrail is enabled.
+  NOTE: unsuccessful sign-in events by the root user are not logged by CloudTrail.
+  
+service: IAM
+status: Exploited
+stride:
+  - Spoofing
+components:
+  - IAM
+  - CloudTrail
+mitigations:
+  aws/iam/features/log_failed_login_attempts.feature
+references:
+  - http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html
