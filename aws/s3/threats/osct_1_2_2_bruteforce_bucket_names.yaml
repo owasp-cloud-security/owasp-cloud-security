@@ -11,6 +11,6 @@ stride:
 components:
   - Bucket permissions
 mitigations:
-  - aws/s3/features/prevent_bucket_discovery.feature
+  - aws/s3/features/generic_bucket_names.feature
 references:
   - Several tools are available to bruteforce S3 bucket names. One such tool is https://digi.ninja/projects/bucket_finder.php
