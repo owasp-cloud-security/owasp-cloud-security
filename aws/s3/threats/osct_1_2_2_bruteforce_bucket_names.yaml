@@ -1,0 +1,16 @@
+id: OSCT-1.2.2
+name: Gaining access to insecurely configured S3 bucket via bruteforcing the bucket name.
+description:
+  S3 bucket names are unique. If S3 buckets are public, but some files within them are private,
+  they can be viewed in the dir listing (but cannot be accessed). Attackers could also gain access 
+  to sensitive information via the bucket naming convention or discover buckets via bruteforcing.
+service: S3
+status: Exploited
+stride:
+  - Information Disclosure
+components:
+  - Bucket permissions
+mitigations:
+  - aws/s3/features/prevent_bucket_discovery.feature
+references:
+  - Several tools are available to bruteforce S3 bucket names. One such tool is https://digi.ninja/projects/bucket_finder.php
