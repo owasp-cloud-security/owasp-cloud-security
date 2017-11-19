@@ -16,11 +16,6 @@ Feature: User Data contains sensitive information
   I want the target to have inappropriately placed sensitive information in User Data that I can access
 
 
-  Background:
-    Given the AWS EC2 service
-    And the User Data component
-
-
   Scenario Outline: Access via instance attribute
     Given an instance with sensitive information in the User Data attribute
     And a principal with the ability to read the instance attributes
