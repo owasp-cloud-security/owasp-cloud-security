@@ -3,9 +3,9 @@
 usage() {
   echo "Usage: test_threat_file.sh [--all] [FILE...]"
   echo ""
-  echo "Runs BDD tests for threat yaml file"
+  echo "Runs BDD tests for threat feature file metadata"
   echo "Options:"
-  echo "    --all   Recursively finds all ocst*.yaml files and runs tests"
+  echo "    --all   Recursively finds all ocst*.feature files and runs tests"
   echo "    FILE    Test one or more files"
   exit 2
 }
@@ -31,11 +31,11 @@ total_files=0
 failed_files=0
 
 if [[ "$1" == "--all" ]]; then
-  for filename in $(find . -name 'ocst*.yaml'); do
+  for filename in $(find . -name 'ocst*.feature'); do
     total_files=$((total_files + 1))
     export OCST_FILE="$filename"
     echo "*** Testing $filename"
-    behave features/threat_yaml_file.feature
+    behave features/threat_feature_file.feature
     if [[ "$?" != "0" ]]; then
       failed_files=$((failed_files + 1))
     fi
@@ -46,7 +46,7 @@ else
     total_files=$((total_files + 1))
     export OCST_FILE="$filename"
     echo "*** Testing $filename"
-    behave features/threat_yaml_file.feature
+    behave features/threat_feature_file.feature
     if [[ "$?" != "0" ]]; then
       failed_files=$((failed_files + 1))
     fi
