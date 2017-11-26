@@ -13,12 +13,12 @@
 
 
 Feature: Unprotected access keys
-  In order to gain additional access to resources
+  In order to gain additional access to resources in an account
   As an attacker
   I want to find unprotected API access keys
 
 
-  Scenario Outline: Finding exposed keys
+  Scenario Outline: Finding exposed access keys
     Given a principal with existing API access keys
     And a <storage-system>
     When the user stores their access keys in the <storage-system>
