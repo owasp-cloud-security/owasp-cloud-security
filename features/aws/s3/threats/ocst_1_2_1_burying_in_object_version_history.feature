@@ -9,14 +9,6 @@
 #   - http://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html
 #   - aws/s3/tools/s3bury
 
-description: |
-  An attacker can hide a malicious file in the version history of a benign object and 
-  can later reference that file using the VersionId and a PreSigned URL. This allows them to hide
-  their exploits and other tools safely and can then use them when they're needed.
-
-  This is similar to the old trick of stashing files in printers to avoid detection on endpoints.
-mitigations:
-  - aws/s3/features/prevent_bucket_version_abuse.feature
 
 Feature: Hiding malicious data within object version history
   In order to avoid detection
