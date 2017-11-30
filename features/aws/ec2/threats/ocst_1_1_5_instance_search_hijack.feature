@@ -13,7 +13,7 @@
 Feature: Instance search hijack
   In order to spoof existing instances
   As an attacker
-  I want manipulate instance search results to include an instance I control
+  I want to manipulate instance search results to include an instance I control
 
 
   Scenario: Name tag search
