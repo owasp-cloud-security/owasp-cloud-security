@@ -1,3 +1,7 @@
 # AWS Elastic Compute Cloud (EC2)
 
-See https://aws.amazon.com/ec2/getting-started/
+Scalable and elastic computing
+
+For more information:
+
+* https://aws.amazon.com/ec2/getting-started/

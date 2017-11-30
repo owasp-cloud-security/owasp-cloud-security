@@ -1,8 +1,10 @@
 # Amazon Web Services
 
-See https://aws.amazon.com/
+For more information:
 
-# Rough notes
+* https://aws.amazon.com/
+
+# Unstructured notes
 
 * Permissive Ingress, egress and admin for security groups and NACLs
 * Console logs exposed
