@@ -12,9 +12,13 @@ This project provides the following for an ever-expanding list of cloud provider
 
 ## Threat stories
 
+For example:
+
 ![threat stories](/images/threat_story.png)
 
 ## Control stories
+
+For example:
 
 ![control stories](/images/control_story.png)
 
