@@ -1,16 +1,25 @@
-@wip @aws @s3
+# Id: OCSC-1.2.1
+# Status: Confirmed
+# Service: AWS S3
+# Components:
+#   - Versioning
+# Mitigates:
+#   - OCST-1.2.1
+
+@aws @s3
 Feature: Malicious data cannot be hidden inside a bucket
   In order to prevent a spoofing attack
-  An attacker
-  Must not be able to hide malicious data within an S3 bucket
-  Mitigating against OCST-1.2.1
+  An an engineer
+  I want to prevent malicious files from being hidden within an S3 bucket
+
 
   @disabled
   Scenario: Detecting VersionId usage
     Given a bucket with versioning enabled
-    And rare use of VersionId in GET Object requests
+    And infrequent use of VersionId in GET Object requests
     When a GET Object request is made with VersionId as a parameter
     Then an alert should be generated
+
 
   @disabled
   Scenario: Prevent unauthorized users writing to a bucket
@@ -20,5 +29,3 @@ Feature: Malicious data cannot be hidden inside a bucket
     And the list of all IAM entities
     When we simulate the write actions for each IAM principal
     Then only the authorized principals should allowed responses
-    
-    
