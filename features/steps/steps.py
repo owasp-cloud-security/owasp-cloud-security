@@ -6,8 +6,8 @@ def step_impl(context, env_name):
   if not hasattr(context, "filename"):
     context.filename = os.environ.get(env_name)
 
-@given('the threat feature file has been loaded')
-def step_impl(context):
+@given('the {file_type} feature file has been loaded')
+def step_impl(context, file_type):
   if not hasattr(context, "file_data"):
     process_comments = True
     metadata_lines = []
@@ -62,10 +62,10 @@ def step_impl(context, field, field_type):
 @then('the Id must be the same as the filename Id')
 def step_impl(context):
   basename = os.path.basename(context.filename)
-  match = re.search(r'^ocst_(\d+)_(\d+)_(\d+)[a-z0-9_]*\.feature$', basename)
+  match = re.search(r'^(ocst|ocsc)_(\d+)_(\d+)_(\d+)[a-z0-9_]*\.feature$', basename)
   assert match
-  ocst_id = "OCST-%s.%s.%s" % (match.group(1), match.group(2), match.group(3))
-  assert context.file_data["Id"] == ocst_id
+  ocsx_id = "%s-%s.%s.%s" % (match.group(1).upper(), match.group(2), match.group(3), match.group(4))
+  assert context.file_data["Id"] == ocsx_id
 
 @then('the "{field}" field length must be {operation} "{length:d}" characters')
 def step_impl(context, field, operation, length):

@@ -1,11 +1,11 @@
 # Id: OCST-1.1.2
 # Status: Confirmed
 # Service: AWS EC2
+# Components:
+#   - User Data
 # STRIDE:
 #   - Tampering
 #   - Elevation of privilege
-# Components:
-#   - User Data
 # References:
 #   - https://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html
 #   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
