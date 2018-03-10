@@ -19,7 +19,7 @@ Feature: Restoring a snapshot that contains sensitive information
     Given an EBS snapshot for an instance containing sensitive information
     And an instance that the attacker controls
     And a principal with the allowed permissions needed to read and restore snapshots
-      | action                | Usage description                                 |
+      | action                | description                                 |
       | ec2:DescribeSnapshots | Get a list and details of the available snapshots |
       | ec2:CreateVolume      | Creates a new volume from the snapshot            |
       | ec2:AttachVolume      | Attach the new volume to the EC2 instance         |
