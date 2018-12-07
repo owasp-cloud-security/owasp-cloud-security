@@ -5,6 +5,7 @@
 #   - EBS
 #   - Snapshots
 # STRIDE:
+#   - Tampering
 #   - Information disclosure
 # References:
 
