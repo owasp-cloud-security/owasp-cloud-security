@@ -2,6 +2,7 @@
 # Status: Confirmed
 # Service: AWS IAM
 # STRIDE:
+#   - Spoofing
 #   - Elevation of privilege
 # Components:
 #   - IAM User
