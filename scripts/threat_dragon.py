@@ -3,6 +3,7 @@
 from pprint import pprint
 import os, fnmatch, yaml, json, re
 from cli.log import LoggingApp
+from bdd_threats import ThreatBdd
 
 class ThreatDragonIntegrationApp(LoggingApp):
   
@@ -11,30 +12,19 @@ class ThreatDragonIntegrationApp(LoggingApp):
     self.threats = {}
     self.service_threats = {}
 
-    # https://stackoverflow.com/questions/2186525/use-a-glob-to-find-files-recursively-in-python
-    matches = []
-    for root, dirnames, filenames in os.walk('.'):
-      for filename in fnmatch.filter(filenames, '*.yaml'):
-        matches.append(os.path.join(root, filename))
+    threatbdd = ThreatBdd(self.params.THREATS)
+    threatbdd.run()
 
-    for threat_file in matches:
-      with open(threat_file) as fh:
-        threat_data = yaml.load(fh)
-      if "threats" in threat_data:
-        threats = threat_data["threats"]
-      else:
-        threats = [threat_data]
+    for threat in threatbdd.threats:
+      self.threats[threat["id"]] = threat
+      service = threat["service"]
+      if not service in self.service_threats:
+        self.service_threats[service] = []
+      self.service_threats[service].append(threat)
 
-      for threat in threats:
-        self.threats[threat["id"]] = threat
-        service = threat["service"]
-        if not service in self.service_threats:
-          self.service_threats[service] = []
-        self.service_threats[service].append(threat)
-        
   def load_threat_dragon_file(self):
-    print("[*] Loading OWASP Threat Dragon file %s" % self.params.FILE)
-    with open(self.params.FILE) as fh:
+    print("[*] Loading OWASP Threat Dragon file %s" % self.params.file)
+    with open(self.params.file) as fh:
       self.threat_dragon_data = json.load(fh)
 
   def discover_threats(self):
@@ -79,21 +69,25 @@ class ThreatDragonIntegrationApp(LoggingApp):
                 print("[*] Found threat %s" % threat_id)
                 found_threat = self.threats[threat_id]
                 threat["title"] = "%s %s" % (threat_id, found_threat["name"])
-                threat["description"] = found_threat["description"]
-                threat["type"] = found_threat["stride"][0]
+                threat["description"] = ""
+                for (depth, feature_line) in found_threat["feature"]:
+                  print(feature_line)
+                  threat["description"] += "%s%s\n" % ("  " * depth, feature_line)
+                threat["type"] = found_threat["stride"][0].capitalize()
                 threat["mitigation"] = ""
-                for mitigation in found_threat["mitigations"]:
-                  if mitigation.endswith(".feature"):
-                    with open(mitigation) as fh:
-                      threat["mitigation"] += fh.read()+"\n\n"
-                  else:
-                      threat["mitigation"] += mitigation+"\n\n"
+                if "mitigations" in found_threat:
+                  for mitigation in found_threat["mitigations"]:
+                    if mitigation.endswith(".feature"):
+                      with open(mitigation) as fh:
+                        threat["mitigation"] += fh.read()+"\n\n"
+                    else:
+                        threat["mitigation"] += mitigation+"\n\n"
               else:
                 print("[*] Unknown threat id %s" % threat_id)
 
   def save_threat_dragon_file(self):
-    with open(self.params.FILE, "w") as fh:
-      print("[*] Saving OWASP Threat Dragon file %s" % self.params.FILE)
+    with open(self.params.file, "w") as fh:
+      print("[*] Saving OWASP Threat Dragon file %s" % self.params.file)
       json.dump(self.threat_dragon_data, fh, indent=4)
 
   def main(self):
@@ -109,7 +103,8 @@ if __name__ == "__main__":
     name="OWASP Threat Dragon Integration",
     description="Inserts threats into Threat Dragon files"
   )
-  app.add_param("FILE", help="OWASP Threat Dragon data file")
+  app.add_param("--file", help="OWASP Threat Dragon data file")
   app.add_param("--discover", help="Discover threats based on cloud provider and service", action="store_true", default=False)
+  app.add_param("THREATS", help="Threats files")
   app.run()
 
